@@ -12,8 +12,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 
 # Función para cargar los datos desde un archivo CSV
-def load_data():
-    
+def load_data():  
     """
     Loads data from a csv file into a pandas DataFrame
 
@@ -21,15 +20,13 @@ def load_data():
     -------
     df : pandas.DataFrame
         The data loaded from the csv file
-    """
-    
+    """ 
     file_path = filedialog.askopenfilename()
     df = pd.read_csv(file_path)
     return df
 
 # Función para entrenar y evaluar el modelo
-def train_model(df):
-    
+def train_model(df): 
     """
     Loads data from a csv file into a pandas DataFrame
 
@@ -37,15 +34,13 @@ def train_model(df):
     -------
     df : pandas.DataFrame
         The data loaded from the csv file
-    
     Loads data from a csv file into a pandas DataFrame
 
     Returns:
     -------
     df : pandas.DataFrame
         The data loaded from the csv file
-    """
-    
+    """  
     # Dividir los datos en entrenamiento y prueba
     x_train, x_test, y_train, y_test = train_test_split(df["review"], df["label"], test_size=0.2)
 
