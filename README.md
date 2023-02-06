@@ -12,7 +12,7 @@ tkinter
 ## Usage 🚀
 1. Clone the repository.
 
-```git clone https://github.com/EnigmaK9/text-classification-gui.git```
+```git clone https://github.com/EnigmaK9/text-classifier```
 
 2. Install the required packages.
 
