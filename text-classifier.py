@@ -5,10 +5,10 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 
 # Cargar los datos
-df = pd.read_csv("reviews.csv")
+df = pd.read_csv("/dataset/IMDB_Dataset.csv")
 
 # Dividir los datos en entrenamiento y prueba
-X_train, X_test, y_train, y_test = train_test_split(df["review"], df["label"], test_size=0.2)
+X_train, X_test, y_train, y_test = train_test_split(df["review"], df["sentiment"], test_size=0.2)
 
 # Convertir los datos de texto en una matriz de características
 vectorizer = CountVectorizer()
