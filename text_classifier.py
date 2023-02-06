@@ -1,3 +1,8 @@
+"""
+This module contains functions for loading data from a CSV file,
+training a text classification model, and displaying the accuracy.
+"""
+
 import tkinter as tk
 from tkinter import filedialog
 import pandas as pd
@@ -8,26 +13,53 @@ from sklearn.metrics import accuracy_score
 
 # Función para cargar los datos desde un archivo CSV
 def load_data():
+    
+    """
+    Loads data from a csv file into a pandas DataFrame
+
+    Returns:
+    -------
+    df : pandas.DataFrame
+        The data loaded from the csv file
+    """
+    
     file_path = filedialog.askopenfilename()
     df = pd.read_csv(file_path)
     return df
 
 # Función para entrenar y evaluar el modelo
 def train_model(df):
+    
+    """
+    Loads data from a csv file into a pandas DataFrame
+
+    Returns:
+    -------
+    df : pandas.DataFrame
+        The data loaded from the csv file
+    
+    Loads data from a csv file into a pandas DataFrame
+
+    Returns:
+    -------
+    df : pandas.DataFrame
+        The data loaded from the csv file
+    """
+    
     # Dividir los datos en entrenamiento y prueba
-    X_train, X_test, y_train, y_test = train_test_split(df["review"], df["label"], test_size=0.2)
+    x_train, x_test, y_train, y_test = train_test_split(df["review"], df["label"], test_size=0.2)
 
     # Convertir los datos de texto en una matriz de características
     vectorizer = CountVectorizer()
-    X_train_features = vectorizer.fit_transform(X_train)
-    X_test_features = vectorizer.transform(X_test)
+    x_train_features = vectorizer.fit_transform(x_train)
+    x_test_features = vectorizer.transform(x_test)
 
     # Entrenar un modelo de regresión logística
     clf = LogisticRegression()
-    clf.fit(X_train_features, y_train)
+    clf.fit(x_train_features, y_train)
 
     # Hacer predicciones en los datos de prueba
-    y_pred = clf.predict(X_test_features)
+    y_pred = clf.predict(x_test_features)
 
     # Evaluar el rendimiento del modelo
     acc = accuracy_score(y_test, y_pred)
