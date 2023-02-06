@@ -12,15 +12,15 @@ tkinter
 ## Usage 🚀
 1. Clone the repository.
 
-git clone https://github.com/EnigmaK9/text-classification-gui.git
+```git clone https://github.com/EnigmaK9/text-classification-gui.git```
 
 2. Install the required packages.
 
-pip install -r requirements.txt
+```pip install -r requirements.txt```
 
 3. Run the script.
 
-python main.py
+```python main.py```
 
 4. Load the data and train the model using the buttons in the GUI.
 
